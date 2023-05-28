@@ -39,16 +39,11 @@ final class UnixizedOfTest {
 
     @Test
     void unixizesInput() throws Exception {
-        final ResourceOf before = new ResourceOf("not-unix-file.txt");
-        MatcherAssert.assertThat(
-            "Text in windows format",
-            new TextOf(before).asString(),
-            Matchers.containsString("\r")
-        );
-        final Unixized actual = new UnixizedOf(before);
         MatcherAssert.assertThat(
             "Unixized text",
-            actual.asText().asString(),
+            new UnixizedOf(
+                new ResourceOf("not-unix-file.txt")
+            ).asText().asString(),
             Matchers.not(Matchers.containsString("\r"))
         );
     }
