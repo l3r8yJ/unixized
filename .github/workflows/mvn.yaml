@@ -23,8 +23,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - uses: actions/cache@v3
         with:
-          path: ~/.m2/repository
           key: ${{ runner.os }}-jdk-${{ matrix.java }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-jdk-${{ matrix.java }}-maven-
-      - run: mvn clean install --errors --batch-mode
+      - run: mvn clean install -Pqulice --errors --batch-mode

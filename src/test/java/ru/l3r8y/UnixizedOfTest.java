@@ -25,7 +25,6 @@
 package ru.l3r8y;
 
 import org.cactoos.io.ResourceOf;
-import org.cactoos.text.TextOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
